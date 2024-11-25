@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// 这里添加您的数据模型
+model Example {
+  record_id   String    @id 
+  name        String
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+} 
